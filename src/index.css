@@ -1,0 +1,134 @@
+/* PLEASE NOTE: THESE TAILWIND IMPORTS SHOULD NEVER BE DELETED */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* DO NOT DELETE THESE TAILWIND IMPORTS, OTHERWISE THE STYLING WILL NOT RENDER AT ALL */
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+/* Typewriter animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  50% { border-color: transparent }
+}
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #8b5cf6;
+  width: 0;
+  animation: 
+    typing 3.5s steps(40, end) forwards,
+    blink 1s step-end infinite;
+}
+/* Photo animation */
+@keyframes pulse-glow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px 5px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px 10px rgba(139, 92, 246, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px 5px rgba(139, 92, 246, 0.3);
+  }
+}
+.photo-animate {
+  animation: pulse-glow 5s infinite ease-in-out;
+}
+/* Background animation */
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.bg-shape {
+  position: absolute;
+  opacity: 0.1;
+  filter: blur(40px);
+  animation: move 15s infinite ease-in-out;
+}
+.bg-shape-1 {
+  animation-delay: 0s;
+}
+.bg-shape-2 {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+.bg-shape-3 {
+  animation-delay: -10s;
+  animation-duration: 25s;
+}
+/* Custom styles for scroll animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+::-webkit-scrollbar-thumb {
+  background: #8b5cf6;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+/* Tech skill card hover effects */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.tech-card:hover .tech-icon {
+  animation: float 2s ease-in-out infinite;
+  color: #a855f7;
+}
+.tech-card {
+  transition: all 0.3s ease;
+}
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
